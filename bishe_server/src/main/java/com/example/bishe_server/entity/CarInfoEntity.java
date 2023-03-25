@@ -28,12 +28,12 @@ public class CarInfoEntity {
     private int park_fee;
 
     @Column(name = "is_pay")
-    private boolean is_pay;
+    private int is_pay;
 
     @Column(name = "is_internal")
-    private boolean is_internal;
+    private int is_internal;
 
-    public CarInfoEntity(String car_id, String car_number, Timestamp date_came_in, Timestamp date_leave_out, int park_fee, boolean is_pay, boolean is_internal) {
+    public CarInfoEntity(String car_id, String car_number, Timestamp date_came_in, Timestamp date_leave_out, int park_fee, int is_pay, int is_internal) {
         this.car_id = car_id;
         this.car_number = car_number;
         this.date_came_in = date_came_in;
@@ -41,6 +41,19 @@ public class CarInfoEntity {
         this.park_fee = park_fee;
         this.is_pay = is_pay;
         this.is_internal = is_internal;
+    }
+
+    @Override
+    public String toString() {
+        return "CarInfoEntity{" +
+                "car_id='" + car_id + '\'' +
+                ", car_number='" + car_number + '\'' +
+                ", date_came_in=" + date_came_in +
+                ", date_leave_out=" + date_leave_out +
+                ", park_fee=" + park_fee +
+                ", is_pay=" + is_pay +
+                ", is_internal=" + is_internal +
+                '}';
     }
 
     public CarInfoEntity() {
@@ -87,19 +100,19 @@ public class CarInfoEntity {
         this.park_fee = park_fee;
     }
 
-    public boolean isIs_pay() {
+    public int isIs_pay() {
         return is_pay;
     }
 
-    public void setIs_pay(boolean is_pay) {
+    public void setIs_pay(int is_pay) {
         this.is_pay = is_pay;
     }
 
-    public boolean isIs_internal() {
+    public int isIs_internal() {
         return is_internal;
     }
 
-    public void setIs_internal(boolean is_internal) {
+    public void setIs_internal(int is_internal) {
         this.is_internal = is_internal;
     }
 }

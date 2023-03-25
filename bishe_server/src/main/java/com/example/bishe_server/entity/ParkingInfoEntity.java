@@ -21,10 +21,10 @@ public class ParkingInfoEntity {
     private String parking_position;
 
     @Column(name = "parking_is_useful")
-    private Boolean parking_is_useful;
+    private int parking_is_useful;
 
     @Column(name = "parking_is_bought")
-    private Boolean parking_is_bought;
+    private int parking_is_bought;
 
     @Column(name = "parking_user_id")
     private String parking_user_id;
@@ -57,19 +57,19 @@ public class ParkingInfoEntity {
         this.parking_position = parking_position;
     }
 
-    public Boolean getParking_is_useful() {
+    public int getParking_is_useful() {
         return parking_is_useful;
     }
 
-    public void setParking_is_useful(Boolean parking_is_useful) {
+    public void setParking_is_useful(int parking_is_useful) {
         this.parking_is_useful = parking_is_useful;
     }
 
-    public Boolean getParking_is_bought() {
+    public int getParking_is_bought() {
         return parking_is_bought;
     }
 
-    public void setParking_is_bought(Boolean parking_is_bought) {
+    public void setParking_is_bought(int parking_is_bought) {
         this.parking_is_bought = parking_is_bought;
     }
 
@@ -81,7 +81,7 @@ public class ParkingInfoEntity {
         this.parking_user_id = parking_user_id;
     }
 
-    public ParkingInfoEntity(String parking_id, String parking_name, String parking_position, Boolean parking_is_useful, Boolean parking_is_bought, String parking_user_id) {
+    public ParkingInfoEntity(String parking_id, String parking_name, String parking_position, int parking_is_useful, int parking_is_bought, String parking_user_id) {
         this.parking_id = parking_id;
         this.parking_name = parking_name;
         this.parking_position = parking_position;

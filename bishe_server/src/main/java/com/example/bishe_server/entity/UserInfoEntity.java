@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.sql.Timestamp;
+
 @Entity
 @Table(name = "UserInfo")
 public class UserInfoEntity {
@@ -22,9 +24,10 @@ public class UserInfoEntity {
     private String user_car_number;
 
     @Column(name = "remain_date")
-    private int remain_date;
+    private Timestamp remain_date;
 
-    public UserInfoEntity(String user_id, String user_name, String user_phone, String user_car_number, int remain_date) {
+
+    public UserInfoEntity(String user_id, String user_name, String user_phone, String user_car_number, Timestamp  remain_date) {
         this.user_id = user_id;
         this.user_name = user_name;
         this.user_phone = user_phone;
@@ -68,11 +71,11 @@ public class UserInfoEntity {
         this.user_car_number = user_car_number;
     }
 
-    public int getRemain_date() {
+    public Timestamp  getRemain_date() {
         return remain_date;
     }
 
-    public void setRemain_date(int remain_date) {
+    public void setRemain_date(Timestamp  remain_date) {
         this.remain_date = remain_date;
     }
 }
