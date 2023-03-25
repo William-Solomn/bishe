@@ -3,6 +3,7 @@ package com.example.server_parking.dao;
 import com.example.server_parking.entity.CarInfoEntity;
 import com.example.server_parking.entity.ParkingInfoEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -48,5 +49,9 @@ public class ParkingInfoDao {
     public List<ParkingInfoEntity> findAll() {
         String sql = "SELECT * FROM parking_info";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ParkingInfoEntity.class));
+    }
+    public int findIsUseful(String parking_id) {
+        String sql = "SELECT parking_is_useful from parking_info where parking_id=?";
+        return jdbcTemplate.queryForObject(sql, new Object[]{parking_id}, Integer.class);
     }
 }

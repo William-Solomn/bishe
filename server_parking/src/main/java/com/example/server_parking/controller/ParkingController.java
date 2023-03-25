@@ -14,7 +14,7 @@ import java.util.UUID;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/parkinginfo")
+@RequestMapping("parkinginfo")
 public class ParkingController {
 
     @Autowired
@@ -36,11 +36,10 @@ public class ParkingController {
 
     // 实现“是否可用”这个接口的修改
     @PostMapping("/setIsUseful")
-    public Boolean setIsUseful(@RequestParam("parking_id")String parking_id
-            ,@RequestParam("parking_is_useful")int parking_is_useful){
+    public Boolean setIsUseful(@RequestParam("parking_id")String parking_id){
         ParkingInfoEntity parkingInfoEntity = new ParkingInfoEntity();
         parkingInfoEntity.setParking_id(parking_id);
-
+        int parking_is_useful = parkingInfoDao.findIsUseful(parking_id);
         parkingInfoEntity.setParking_is_useful(parking_is_useful==1?0:1);
         parkingInfoDao.updateUseFul(parkingInfoEntity);
         return true;

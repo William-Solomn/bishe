@@ -14,19 +14,12 @@ import java.util.UUID;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/userinfo")
+@RequestMapping("userinfo")
 public class UserInfoController {
 
 
     @Autowired
     private UserInfoDao userInfoDao;
-    // 返回所有用户的信息
-//    @RequestMapping("/getAllUser")
-//    public List<UserInfoEntity> getAllUser(){
-//        List<UserInfoEntity> list = new ArrayList<UserInfoEntity>();
-//        list = userInfoRep.findAll();
-//        return list;
-//    }
 
     @GetMapping("/getAllUserInfo")
     public List<UserInfoEntity> getAll() {

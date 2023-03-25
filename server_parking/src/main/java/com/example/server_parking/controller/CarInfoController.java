@@ -2,6 +2,8 @@ package com.example.server_parking.controller;
 
 import com.example.server_parking.dao.CarInfoDao;
 import com.example.server_parking.entity.CarInfoEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -12,18 +14,21 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("carinfo")
 public class CarInfoController {
 
     // 一个接口，返回所有数据即可，且不可查看或改变
-
+    Logger logger = LoggerFactory.getLogger(CarInfoController.class);
     @Autowired
     private CarInfoDao carInfoDao;
 
     // 返回表里所有数据
     @GetMapping("/getAllCarInfo")
     public List<CarInfoEntity> getAll() {
-        return carInfoDao.findAll();
+        List<CarInfoEntity> test = carInfoDao.findAll();
+        logger.warn(String.valueOf(test));
+        return test;
     }
 
     // 一个接口，增加所有数据

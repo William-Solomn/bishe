@@ -1,4 +1,6 @@
 package com.example.server_parking.entity;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 
@@ -23,9 +25,11 @@ public class CarInfoEntity {
     @Column(name = "park_fee")
     private int park_fee;
 
+    @JsonProperty("is_pay")
     @Column(name = "is_pay")
     private int is_pay;
 
+    @JsonProperty("is_internal")
     @Column(name = "is_internal")
     private int is_internal;
 
