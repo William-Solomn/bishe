@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -41,8 +42,16 @@ public class CarInfoController {
         CarInfoEntity car = new CarInfoEntity();
         car.setCar_id(UUID.randomUUID().toString());
         car.setCar_number(car_number);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        logger.warn("这个是date-came-in");
+        logger.warn(date_came_in);
+        date_came_in = date_came_in.replaceAll("[a-zA-Z]", " ");
+        logger.warn("这个替换后的date-came-in");
+        logger.warn(date_came_in);
         car.setDate_came_in(Timestamp.valueOf(date_came_in));
-        car.setDate_leave_out(Timestamp.valueOf(date_leave_out));
+        logger.warn("这个是Timestamp date-came-in",Timestamp.valueOf(date_came_in));
+        car.setDate_leave_out(Timestamp.valueOf(date_came_in.replaceAll("[a-zA-Z]", " ")));
         car.setIs_pay(is_pay);
         car.setIs_internal(is_internal);
         car.setPark_fee(25);

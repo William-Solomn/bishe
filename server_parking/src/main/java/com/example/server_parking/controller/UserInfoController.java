@@ -45,6 +45,7 @@ public class UserInfoController {
         userInfoEntity.setUser_name(user_name);
         userInfoEntity.setUser_phone(user_phone);
         userInfoEntity.setUser_car_number(user_car_number);
+        remain_date = remain_date.replaceAll("[a-zA-Z]", " ");
         userInfoEntity.setRemain_date(Timestamp.valueOf(remain_date));
         userInfoDao.insertUser(userInfoEntity);
         return true;
