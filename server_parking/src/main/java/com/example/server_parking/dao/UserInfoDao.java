@@ -31,6 +31,24 @@ public class UserInfoDao {
             return list.get(0);
         }
     }
+    public UserInfoEntity getUserById(String user_id) {
+        String sql = "select * from user_info where user_id=?";
+        List<UserInfoEntity> list = jdbcTemplate.query(sql, new Object[]{user_id}, new BeanPropertyRowMapper<>(UserInfoEntity.class));
+        if (list.isEmpty()) {
+            return null;
+        } else {
+            return list.get(0);
+        }
+    }
+    public UserInfoEntity getUserByName(String user_name) {
+        String sql = "select * from user_info where user_name=?";
+        List<UserInfoEntity> list = jdbcTemplate.query(sql, new Object[]{user_name}, new BeanPropertyRowMapper<>(UserInfoEntity.class));
+        if (list.isEmpty()) {
+            return null;
+        } else {
+            return list.get(0);
+        }
+    }
 
     public List<UserInfoEntity> findAll() {
         String sql = "SELECT * FROM user_info";

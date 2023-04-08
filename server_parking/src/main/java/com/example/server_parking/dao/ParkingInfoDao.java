@@ -1,13 +1,12 @@
 package com.example.server_parking.dao;
 
-import com.example.server_parking.entity.CarInfoEntity;
 import com.example.server_parking.entity.ParkingInfoEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -54,4 +53,17 @@ public class ParkingInfoDao {
         String sql = "SELECT parking_is_useful from parking_info where parking_id=?";
         return jdbcTemplate.queryForObject(sql, new Object[]{parking_id}, Integer.class);
     }
+    public int[] getParkingCounts() {
+        String sql_can_use = "select sum(parking_is_useful=0) from parking_info";
+        String sql_useing = "select sum(parking_is_useful=1) from parking_info";
+        String sql_user_use = "select count(distinct parking_id) from parking_info where parking_is_useful=1 and parking_is_bought=1";
+
+        int can_use_count = jdbcTemplate.queryForObject(sql_can_use, Integer.class);
+        int using_count = jdbcTemplate.queryForObject(sql_useing, Integer.class);
+        int user_use_count = jdbcTemplate.queryForObject(sql_user_use, Integer.class);
+
+        int[] counts = new int[]{can_use_count, using_count, user_use_count};
+        return counts;
+    }
+
 }
