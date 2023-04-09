@@ -1,8 +1,10 @@
 #include <Servo.h>
 #include <ESP8266WiFiMulti.h>
 #include <ESP8266WebServer.h>
+#include <ESP8266HTTPClient.h>
 
 ESP8266WiFiMulti wifiMulti;
+HTTPClient http;
 // 需求简版：
 /*
   ①：在android app上点击按钮，舵机即可转动，电机一下，舵机就转动一下（接口1：正转。接口2：反转）
@@ -13,12 +15,12 @@ ESP8266WiFiMulti wifiMulti;
 */
 
 // WiFi网络信息
-const char* ssid = "CMCC-pXm9-5G-FAST";
-const char* password = "gf92pdxe";
+const char* ssid = "abcd";
+const char* password = "1234567889";
 
 // 服务器信息
 const char* server_ip = "localhost";
-const int server_port = 80;
+const int server_port = 8887;
 
 // 创建Web服务器
 ESP8266WebServer server(80);
@@ -58,10 +60,10 @@ void handleToggle() {
       delay(15);                       // 等待转动到指定角度
     }
     Serial.print(" ok ");
-    delay(2000);//延时2s 
+    delay(1000);//延时2s 
   }
 
-  delay(2000);//延时2s
+  delay(1000);//延时2s
   
   server.send(200, "text/plain", ledState ? "on" : "off");
 }
@@ -96,6 +98,46 @@ void setup() {
   Serial.println(WiFi.localIP());
 }
 
+// 新增函数，用于向后端发送post请求
+void sendPostRequest(const char* apiPath, const String& parking_id) {
+  http.begin(server_ip, server_port, apiPath);
+  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  String payload = "parking_id=" + parking_id;
+  int httpCode = http.POST(payload);
+  if (httpCode > 0) {
+    Serial.printf("POST request sent: %s, response code: %d\n", apiPath, httpCode);
+  } else {
+    Serial.printf("POST request failed: %s, error: %s\n", apiPath, http.errorToString(httpCode).c_str());
+  }
+  http.end();
+}
+
+void checkDistance() {
+  static unsigned long lastCheckTime = 0;
+  static unsigned long lastStateChangeTime = 0;
+  static bool previousState = false;
+
+  if (millis() - lastCheckTime >= 1000) {
+    lastCheckTime = millis();
+
+    bool currentState = (cm < 200); // 当前状态：距离小于2米
+
+    if (currentState == previousState && millis() - lastStateChangeTime >= 5000) {
+      // 距离状态持续5秒以上
+      if (currentState) {
+        sendPostRequest("/setNotUseful", "2c25f2ad-e82d-4a20-acc3-161054a417f5");
+      } else {
+        sendPostRequest("/setIsUseful", "2c25f2ad-e82d-4a20-acc3-161054a417f5");
+      }
+      lastStateChangeTime = millis(); // 更新状态改变时间
+    } else if (currentState != previousState) {
+      // 距离状态改变
+      previousState = currentState;
+      lastStateChangeTime = millis(); // 更新状态改变时间
+    }
+  }
+}
+
 void loop() { 
   server.handleClient();
   digitalWrite(TrigPin, LOW);       //用低高低电平发送脉冲给Trigpin引脚
@@ -108,6 +150,7 @@ void loop() {
   Serial.print("cm");                   //显示单位
   Serial.println();                   //回车
   delay(1000);
+  checkDistance();
  
 
 }
