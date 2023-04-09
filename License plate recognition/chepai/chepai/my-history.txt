@@ -1,0 +1,71 @@
+PS H:\code\bishe\License plate recognition\chepai\chepai> python .\train-license-digits.py train
+WARNING:tensorflow:From H:\plugin\Python\programFile\lib\site-packages\tensorflow\python\compat\v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+2023-04-09 23:00:33.344210: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2023-04-09 23:00:33.346570: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: 
+cublasLt64_11.dll not found
+2023-04-09 23:00:33.348974: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2023-04-09 23:00:33.351534: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2023-04-09 23:00:33.355182: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusolver64_11.dll'; dlerror: 
+cusolver64_11.dll not found
+2023-04-09 23:00:33.357784: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cusparse64_11.dll'; dlerror: 
+cusparse64_11.dll not found
+2023-04-09 23:00:33.360936: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2023-04-09 23:00:33.361288: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download 
+and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2023-04-09 23:00:33.362472: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING:tensorflow:From H:\plugin\Python\programFile\lib\site-packages\tensorflow\python\util\dispatch.py:1082: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From H:\plugin\Python\programFile\lib\site-packages\tensorflow\python\util\dispatch.py:1082: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+读取图片文件耗费时间：31秒
+一共读取了 4285 个训练图像， 4285 个标签
+训练数据集分成 72 批, 前面每批 60 个数据，最后一批 25 个数据
+第 0 次训练迭代: 准确率 4.00000%
+第 5 次训练迭代: 准确率 68.00000%
+第 10 次训练迭代: 准确率 86.00000%
+第 15 次训练迭代: 准确率 93.00000%
+第 20 次训练迭代: 准确率 95.50000%
+第 25 次训练迭代: 准确率 96.00000%
+第 30 次训练迭代: 准确率 96.50000%
+第 35 次训练迭代: 准确率 97.00000%
+第 40 次训练迭代: 准确率 98.00000%
+第 45 次训练迭代: 准确率 98.00000%
+第 50 次训练迭代: 准确率 97.50000%
+第 55 次训练迭代: 准确率 95.50000%
+第 60 次训练迭代: 准确率 97.00000%
+第 65 次训练迭代: 准确率 98.00000%
+第 70 次训练迭代: 准确率 98.00000%
+第 75 次训练迭代: 准确率 97.50000%
+第 80 次训练迭代: 准确率 98.00000%
+第 85 次训练迭代: 准确率 97.50000%
+
+
+——————————————————————————————————————————————————————————————————————————————————————————————————————————
+读取图片文件耗费时间：11秒
+一共读取了 4285 个训练图像， 4285 个标签
+训练数据集分成 72 批, 前面每批 60 个数据，最后一批 25 个数据
+第 0 次训练迭代: 准确率 3.50000%
+第 5 次训练迭代: 准确率 59.50000%
+第 10 次训练迭代: 准确率 80.00000%
+第 15 次训练迭代: 准确率 89.50000%
+第 20 次训练迭代: 准确率 92.00000%
+第 25 次训练迭代: 准确率 94.00000%
+第 30 次训练迭代: 准确率 96.50000%
+第 35 次训练迭代: 准确率 96.50000%
+第 40 次训练迭代: 准确率 97.50000%
+第 45 次训练迭代: 准确率 96.50000%
+完成训练!
+训练耗费时间：241秒
+
+——————————————————————————————————————————————————————————————————————————

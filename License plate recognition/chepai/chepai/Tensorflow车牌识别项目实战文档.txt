@@ -1,0 +1,35 @@
+
+环境准备：
+	Anaconda 4.10.3
+	Tensorflow 2.6.0
+	python3.7.8
+	coding: utf-8
+	pycharm解释器：D:\Anaconda\envs\tensorflow\python.exe
+	以及各种第三方库
+
+
+流程思路:
+	1、将图片通过opencv切割识别定位车牌，切割保存
+	2、识别省份简称、识别城市代号、识别车牌编号
+
+
+功能描述:
+	car_num_main.py  :将图片转为灰度图像，灰度图像二极化，分割图像并分别保存为.jpg和.bmp文件
+	train-license-province.py : 省份简称训练识别  
+	train-license-letters.py :城市代号训练识别
+	train-license-digits.py :车牌编号训练识别
+
+
+细节阐述：
+	1、图片切割后分别保存在两个文件夹./img_cut   and    ./img_cut_not_3240
+	2、识别车牌需进入终端，在命令行中进入脚本所在目录，
+	输入执行如下命令：python train-license-province.py train 进行省份简称训练
+	输入执行如下命令：python train-license-province.py predict 进行省份简称识别
+	输入执行如下命令：python train-license-letters.py train 进行城市代号训练
+	输入执行如下命令：python train-license-letters.py predict 进行城市代号识别
+	输入执行如下命令：python train-license-digits.py train 进行车牌编号训练
+	输入执行如下命令：python train-license-digits.py predict 进行车牌编号识别
+	3、图片调为.jpg格式,大小调为像素600*413最佳，可依据代码酌情调试
+	4、具体可以准确识别的车牌号参见数据集中训练集
+	
+
