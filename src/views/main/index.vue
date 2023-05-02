@@ -35,13 +35,6 @@
           <el-col :span="24">
             <Detail class="main" :on-save="handleTableEditSave" :alter-table-list="altTableList" :table="detailTableItem" />
           </el-col>
-          <el-col :span="24">
-            <el-card>
-            </el-card>
-          </el-col>
-          <el-col :span="24">
-            <div class="grid-content">3</div>
-          </el-col>
         </el-row>
       </el-col>
     </el-row>

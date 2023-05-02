@@ -33,6 +33,10 @@
       </el-row>
     </div>
     <el-divider />
+      <el-button @click="handleUpRailing()">
+        抬起栏杆
+      </el-button>
+    <el-divider />
     <div v-if="!table.user_id">
       <div slot="header">该车位暂无主人</div>
     </div>
@@ -49,17 +53,6 @@
             <el-descriptions-item label="到期时间">{{ table['remain_date'].substring(0,16) }}</el-descriptions-item>
             <!-- <el-descriptions-item label="">{{ handlePrice(table['price']) }}</el-descriptions-item> -->
           </el-descriptions>
-          <!-- <el-descriptions v-if="table.order" :column="1">
-            <el-descriptions-item label="开台时间">{{ handleTime(table.order['orderTime']) }}</el-descriptions-item>
-          </el-descriptions>
-        </el-col>
-        <el-col :span="12">
-          <el-descriptions v-if="table.order" :column="1">
-            <el-descriptions-item label="单号">{{ table.order['orderNo'] }}</el-descriptions-item>
-            <el-descriptions-item label="折扣"> {{ handlePrice(table.order['discountPrice']) }}</el-descriptions-item>
-            <el-descriptions-item label="共计"> {{ handlePrice(table.order.price) }}</el-descriptions-item>
-            <el-descriptions-item label="实收"> {{ handlePrice(table.order['actualPrice']) }}</el-descriptions-item>
-          </el-descriptions> -->
         </el-col>
 
       </el-row>
@@ -78,7 +71,8 @@
   } from '@/utils/auth'
 
   import {
-    getParkingCounts
+    getParkingCounts,
+    postUpRailing
   } from '@/api/main'
   import Credit from '@/views/main/credit'
 
@@ -166,31 +160,12 @@
 
         this.showEdit = false
       },
-      handleCredit(info) {
-        const creditInfo = {
-          payment: '挂单',
-          credit: true,
-          delta: this.payInfo.delta
-        }
-        for (const key in info) {
-          creditInfo[key] = info[key]
-        }
-        this.payInfo = creditInfo
 
-        this.handelPay('挂单')
-      },
-      handlePayment() {
-        // 占用中
-        if (this.table.order) {
-          this.showPayment = true
-        } else {
-          this.$notify.info({
-            title: '消息',
-            message: '当前餐桌无订单'
-          })
-        }
-      },
-
+      handleUpRailing(){
+        postUpRailing().then((resp)=>{
+          console.log('11111',resp)
+        })
+      }
     }
   }
 

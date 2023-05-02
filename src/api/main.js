@@ -17,3 +17,8 @@ export function getUserInfoByName(user_name){
 export function getParkingCounts(){
     return requestGet(`/parkinginfo/getParkingCounts`)
 }
+
+
+export function postUpRailing(){
+    return requestPost(`/railing/liftGate`)
+}
