@@ -1,7 +1,7 @@
 package com.example.server_parking.entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 
 import java.sql.Timestamp;

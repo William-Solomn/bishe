@@ -42,6 +42,8 @@ public class ParkingController {
 //        parkingInfoDao.updateUseFul(parkingInfoEntity);
 //        return true;
 //    }
+
+// 如果距离距离小于2米，则就调用改接口，并设为不可用
     @CrossOrigin
     @PostMapping("/setIsUseful")
     @ResponseBody
@@ -51,11 +53,25 @@ public class ParkingController {
         ParkingInfoEntity parkingInfoEntity = new ParkingInfoEntity();
         parkingInfoEntity.setParking_id(parking_id);
         int parking_is_useful = parkingInfoDao.findIsUseful(parking_id);
-        parkingInfoEntity.setParking_is_useful(parking_is_useful == 1 ? 0 : 1);
+        parkingInfoEntity.setParking_is_useful(1);
         parkingInfoDao.updateUseFul(parkingInfoEntity);
         return true;
     }
 
+    // 如果距离距离小于2米，则就调用改接口，并设为不可用
+    @CrossOrigin
+    @PostMapping("/setNotUseful")
+    @ResponseBody
+    public Boolean setNotUseful(@RequestBody Map<String, String> params) {
+        String parking_id = params.get("parking_id");
+
+        ParkingInfoEntity parkingInfoEntity = new ParkingInfoEntity();
+        parkingInfoEntity.setParking_id(parking_id);
+        int parking_is_useful = parkingInfoDao.findIsUseful(parking_id);
+        parkingInfoEntity.setParking_is_useful(0);
+        parkingInfoDao.updateUseFul(parkingInfoEntity);
+        return true;
+    }
 
 //    // 实现编辑按钮的操作，即修改某条数据的所有字段
 //    @PostMapping("/updateParking")

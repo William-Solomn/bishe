@@ -1,0 +1,58 @@
+1
+Zou, Y., Zhang, Y., Yan, J., Jiang, X., Huang, T., Fan, H., & Cui, Z. (2020). A Robust License Plate Recognition Model Based on Bi-LSTM. IEEE Access, 8, 211630–211641.
+
+2
+Shashirangana, J., Padmasiri, H., Meedeniya, D., & Perera, C. (2021). Automated License Plate Recognition: A Survey on Methods and Techniques. IEEE Access, 9, 11203–11225.
+
+3
+Hendry, & Chen, R.-C. (2019). Automatic License Plate Recognition Via Sliding-Window Darknet-Yolo Deep Learning. Image and Vision Computing.
+
+4
+Henry, C., Ahn, S. Y., & Lee, S.-W. (2020). Multinational License Plate Recognition Using Generalized Character Sequence Detection. IEEE Access, 8, 35185–35199.
+
+5
+Zhang, L., Wang, P., Li, H., Li, Z., Shen, C., & Zhang, Y. (2020). A Robust Attentional Framework for License Plate Recognition in the Wild. IEEE Transactions on Intelligent Transportation Systems, 1–10.
+
+6
+Pustokhina, I. V., Pustokhin, D. A., Rodrigues, J. J. P. C., Gupta, D., Khanna, A., Shankar, K., … Joshi, G. P. (2020). Automatic Vehicle License Plate Recognition using Optimal K-Means with Convolutional Neural Network for Intelligent Transportation Systems. IEEE Access, 1–1.
+
+7
+Izidio, D. M. F., Ferreira, A. P. A., Medeiros, H. R., & Barros, E. N. da S. (2019). An embedded automatic license plate recognition system using deep learning. Design Automation for Embedded Systems.
+
+8
+Kong, X., Wang, K., Hou, M., Hao, X., Shen, G., Chen, X., & Xia, F. (2021). A Federated Learning-Based License Plate Recognition Scheme for 5G-Enabled Internet of Vehicles. IEEE Transactions on Industrial Informatics, 17(12), 8523–8530.
+
+9
+Björklund, T., Fiandrotti, A., Annarumma, M., Francini, G., & Magli, E. (2019). Robust License Plate Recognition using Neural Networks Trained on Synthetic Images. Pattern Recognition.
+
+10
+Alghyaline, S. (2020). Real-time Jordanian license plate recognition using deep learning. Journal of King Saud University - Computer and Information Sciences.
+
+11
+Zhan, X., Li, R., & Ukkusuri, S. V. (2020). Link-based traffic state estimation and prediction for arterial networks using license-plate recognition data. Transportation Research Part C: Emerging Technologies, 117, 102660.
+
+12
+Kaur P, Kumar Y, Ahmed S, et al. Automatic license plate recognition system for vehicles using a cnn[J]. Computers, Materials & Continua, 2022, 71(1): 35-50.
+
+13
+Khare, V., Shivakumara, P., Chan, C. S., Lu, T., Meng, L. K., Woon, H. H., & Blumenstein, M. (2019). A Novel Character Segmentation-Reconstruction Approach for License Plate Recognition. Expert Systems with Applications.
+
+14
+Yousif, B. B., Ata, M. M., Fawzy, N., & Obaya, M. (2020). Towards an Optimized Neutrosophic k-means with Genetic Algorithm for Automatic Vehicle License Plate Recognition (ONKM-AVLPR). IEEE Access, 1–1.
+
+15
+Pustokhina I V, Pustokhin D A, Rodrigues J J P C, et al. Automatic vehicle license plate recognition using optimal K-means with convolutional neural network for intelligent transportation systems[J]. Ieee Access, 2020, 8: 92907-92917.
+
+16
+
+
+17
+
+
+18
+
+
+19
+
+
+20

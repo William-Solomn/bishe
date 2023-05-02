@@ -1,6 +1,6 @@
 package com.example.server_parking.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 
 @Entity

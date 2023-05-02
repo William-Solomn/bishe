@@ -1,0 +1,28 @@
+1
+Kodali, R. K., & Soratkal, S. (2016). MQTT based home automation system using ESP8266. 2016 IEEE Region 10 Humanitarian Technology Conference (R10-HTC). doi:10.1109/r10-htc.2016.7906845 
+
+2
+J. Mesquita, D. Guimarães, C. Pereira, F. Santos and L. Almeida, "Assessing the ESP8266 WiFi module for the Internet of Things," 2018 IEEE 23rd International Conference on Emerging Technologies and Factory Automation (ETFA), Turin, Italy, 2018, pp. 784-791, doi: 10.1109/ETFA.2018.8502562.
+
+3
+Kodali, R. K., & Mahesh, K. S. (2016). A low cost implementation of MQTT using ESP8266. 2016 2nd International Conference on Contemporary Computing and Informatics (IC3I). doi:10.1109/ic3i.2016.7917998 
+
+4
+Manan Mehta. ESP 8266: A Breakthrough in WirelessSensor Networks and Internet of things. International Journal of Electronicsand Communication Engineering & Technology, 6(8), 2015, pp. 07-11.http://www.iaeme.com/IJECET/issues.asp?JTypeIJECET&VType=6&IType=8 
+
+5
+Kodali, R. K., & Mahesh, K. S. (2016). Low cost ambient monitoring using ESP8266. 2016 2nd International Conference on Contemporary Computing and Informatics (IC3I). doi:10.1109/ic3i.2016.7918788 
+
+6
+Thaker, T. (2016). ESP8266 based implementation of wireless sensor network with Linux based web-server. 2016 Symposium on Colossal Data Analysis and Networking (CDAN). doi:10.1109/cdan.2016.7570919 
+
+7
+Skraba, A., Kolozvari, A., Kofjac, D., Stojanovic, R., Stanovov, V., & Semenkin, E. (2017). Prototype of group heart rate monitoring with NODEMCU ESP8266. 2017 6th Mediterranean Conference on Embedded Computing (MECO). doi:10.1109/meco.2017.7977151 
+
+8
+Srivastava, P., Bajaj, M., & Rana, A. S. (2018). IOT based controlling of hybrid energy system using ESP8266. 2018 IEEMA Engineer Infinite Conference (eTechNxT). doi:10.1109/etechnxt.2018.8385294 
+
+9
+Hegt, H. A., de la Haye, R. J., & Khan, N. A. (n.d.). A high performance license plate recognition system. SMC’98 Conference Proceedings. 1998 IEEE International Conference on Systems, Man, and Cybernetics (Cat. No.98CH36218). doi:10.1109/icsmc.1998.727533
+
+

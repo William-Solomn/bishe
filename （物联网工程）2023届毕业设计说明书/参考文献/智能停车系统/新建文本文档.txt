@@ -1,0 +1,66 @@
+1
+Wang, X., Shi, H., & Zhang, C. (2020). Path Planning for Intelligent Parking System Based on Improved Ant Colony Optimization. IEEE Access, 8, 65267–65273. 
+
+2
+Fahim, A., Hasan, M., & Chowdhury, M. A. (2021). Smart parking systems: comprehensive review based on various aspects. Heliyon, 7(5), e07050. 
+
+3
+Said, A. M., Kamal, A. E., & Afifi, H. (2021). An intelligent parking sharing system for green and smart cities based IoT. Computer Communications, 172, 10–18. 
+
+4
+Liu, J., Wu, J., & Sun, L. (2020). Control method of urban intelligent parking guidance system based on Internet of Things. Computer Communications, 153, 279–285.
+
+5
+Mohammadi, F., Nazri, G.-A., & Saif, M. (2019). A Real-Time Cloud-Based Intelligent Car Parking System for Smart Cities. 2019 IEEE 2nd International Conference on Information Communication and Signal Processing (ICICSP). 
+Abidin M Z, Pulungan R. A systematic review of machine-vision-based smart parking systems[J]. Sci. J. Informatics, 2020, 7(2): 213-227.
+
+7
+Tiwari R, Sharma H K, Upadhyay S, et al. Automated Parking System-Cloud and IoT based[J]. Int. J. Eng. Adv. Technol, 2019, 8: 116-123.
+
+8
+Mařík, V., Kadera, P., Rzevski, G., Zoitl, A., Anderst-Kotsis, G., Tjoa, A. M., & Khalil, I. (Eds.). (2019). Industrial Applications of Holonic and Multi-Agent Systems. Lecture Notes in Computer Science.
+
+9
+M. Praveen and V. Harini, "NB-IOT based smart car parking system," 2019 International Conference on Smart Structures and Systems (ICSSS), Chennai, India, 2019, pp. 1-5, 
+
+10
+Diaz Ogás, M.G.; Fabregat, R.; Aciar, S. Survey of Smart Parking Systems. Appl. Sci. 2020, 10, 3872. https://doi.org/10.3390/app10113872
+
+11
+Tiwari R, Sharma H K, Upadhyay S, et al. Automated Parking System-Cloud and IoT based[J]. Int. J. Eng. Adv. Technol, 2019, 8: 116-123.
+
+12
+X. Ye, J. Wang, T. Wang, X. Yan, Q. Ye and J. Chen, "Short-Term Prediction of Available Parking Space Based on Machine Learning Approaches," in IEEE Access, vol. 8, pp. 174530-174541, 2020, doi: 10.1109/ACCESS.2020.3025589.
+
+13
+Razipour, R., Moghaddas-Tafreshi, S.-M., & Farhadi, P. (2019). Optimal management of electric vehicles in an intelligent parking lot in the presence of hydrogen storage system. Journal of Energy Storage, 22, 144–152.
+
+14
+Sakurada L, Barbosa J, Leitão P, et al. Development of agent-based cps for smart parking systems[C]//IECON 2019-45th Annual Conference of the IEEE Industrial Electronics Society. IEEE, 2019, 1: 2964-2969.
+
+15
+Ashok, D., Tiwari, A., & Jirge, V. (2020). Smart Parking System using IoT Technology. 2020 International Conference on Emerging Trends in Information Technology and Engineering (ic-ETITE).
+
+16
+Liu, J., Chen, C., Liu, Z., Jermsittiparsert, K., & Ghadimi, N. (2020). An IGDT-based risk-involved optimal bidding strategy for hydrogen storage-based intelligent parking lot of electric vehicles. Journal of Energy Storage, 27, 101057.
+
+17
+Ajchariyavanich, C., Limpisthira, T., Chanjarasvichai, N., Jareonwatanan, T., Phongphanpanya, W., Wareechuensuk, S., … Pipattanasomporn, M. (2019). Park King: An IoT-based Smart Parking System. 2019 IEEE International Smart Cities Conference (ISC2).
+
+18
+Yang, W., & Lam, P. T. I. (2019). Evaluation of drivers’ benefits accruing from an intelligent parking information system. Journal of Cleaner Production.
+
+19
+Iqbal, R., Maniak, T., & Karyotis, C. (2019). Intelligent Remote Monitoring of Parking Spaces Using Licensed and Unlicensed Wireless Technologies. IEEE Network, 33(4), 23–29.
+
+20
+Iqbal, R., Maniak, T., & Karyotis, C. (2019). Intelligent Remote Monitoring of Parking Spaces Using Licensed and Unlicensed Wireless Technologies. IEEE Network, 33(4), 23–29.
+
+21
+Ghorpade, S. N., Zennaro, M., & Chaudhari, B. S. (2020). GWO Model for Optimal Localization of IoT-Enabled Sensor Nodes in Smart Parking Systems. IEEE Transactions on Intelligent Transportation Systems, 1–8.
+
+22
+Guo, J., Lv, Y., Zhang, H., Nojavan, S., & Jermsittiparsert, K. (2020). Robust optimization strategy for intelligent parking lot of electric vehicles. Energy, 117555.
+
+23
+Marzoghi, A. F., Bahramara, S., Adabi, F., & Nojavan, S. (2019). Optimal scheduling of intelligent parking lot using interval optimization method in the presence of the electrolyser and fuel cell as hydrogen storage system. International Journal of Hydrogen Energy.

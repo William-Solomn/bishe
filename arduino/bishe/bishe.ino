@@ -7,6 +7,7 @@
 
 #define MQTT_BROKER_IP "175.24.202.87"
 #define MQTT_TOPIC "parking/lift_gate"
+#define MQTT_TOPIC_DISTANCE "railing/distance"
 
 
 
@@ -212,5 +213,7 @@ void loop() {
   } else {
     client.loop();
   }
-
+// 发送距离数据到MQTT服务器
+  String distanceStr = String(cm);
+  client.publish(MQTT_TOPIC_DISTANCE, distanceStr.c_str());
 }

@@ -1,0 +1,32 @@
+1
+Gupta, V., Khera, S., & Turk, N. (2020). MQTT protocol employing IOT based home safety system with ABE encryption. Multimedia Tools and Applications, 80(2), 2931–2949. doi:10.1007/s11042-020-09750-4
+
+2
+Bender, M., Kirdan, E., Pahl, M.-O., & Carle, G. (2021). Open-Source MQTT Evaluation. 2021 IEEE 18th Annual Consumer Communications & Networking Conference (CCNC). doi:10.1109/ccnc49032.2021.9369499
+
+3
+Nimmaka, B., & Prakasarao, A. (2018). Implementation of Indoor Pollution Monitoring Using MQTT Protocol. 2018 Second International Conference on Inventive Communication and Computational Technologies (ICICCT). doi:10.1109/icicct.2018.8473144 
+
+4
+Masdani, M. V., & Darlis, D. (2018). A comprehensive study on MQTT as a low power protocol for internet of things application. IOP Conference Series: Materials Science and Engineering, 434, 012274. doi:10.1088/1757-899x/434/1/012274 
+
+5
+Kodali, R. K., & Gorantla, V. S. K. (2017). Weather tracking system using MQTT and SQLite. 2017 3rd International Conference on Applied and Theoretical Computing and Communication Technology (iCATccT). doi:10.1109/icatcct.2017.8389134
+
+6
+Atmoko, R. A., Riantini, R., & Hasin, M. K. (2017). IoT real time data acquisition using MQTT protocol. Journal of Physics: Conference Series, 853, 012003. doi:10.1088/1742-6596/853/1/012003
+
+7
+Oliveira, G. M. B., Costa, D. C. M., Cavalcanti, R. J. B. V. M., Oliveira, J. P. P., Silva, D. R. C., Nogueira, M. B., & Rodrigues, M. C. (2018). Comparison Between MQTT and WebSocket Protocols for IoT Applications Using ESP8266. 2018 Workshop on Metrology for Industry 4.0 and IoT. doi:10.1109/metroi4.2018.8428348 
+
+8
+Van der Westhuizen, H. W., & Hancke, G. P. (2018). Practical Comparison between COAP and MQTT - Sensor to Server level. 2018 Wireless Advanced (WiAd). doi:10.1109/wiad.2018.8588443 
+
+9
+Kodali, R. K., & Sarjerao, B. S. (2017). A low cost smart irrigation system using MQTT protocol. 2017 IEEE Region 10 Symposium (TENSYMP). doi:10.1109/tenconspring.2017.807009
+
+10
+Aryanto, I. K. A. A., Huizen, R. R., & Aryanto, K. Y. E. (2020). Design of Soil Humidity Monitoring System Using the Internet of Things Concept and MQTT. 2020 International Conference on Smart Technology and Applications (ICoSTA). doi:10.1109/icosta48221.2020.1570611
+
+11
+Velez, J., Trafford, R., Pierce, M., Thomson, B., Jastrzebski, E., & Lau, B. (2018). IEEE 1451-1-6: Providing common network services over MQTT. 2018 IEEE Sensors Applications Symposium (SAS). doi:10.1109/sas.2018.8336750
