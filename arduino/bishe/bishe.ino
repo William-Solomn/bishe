@@ -2,6 +2,7 @@
 #include <ESP8266WiFiMulti.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266HTTPClient.h>
+
 #include <PubSubClient.h>
 #include <Wire.h>
 
@@ -29,6 +30,7 @@ const char* password = "1234567889";
 // 服务器信息
 const char* server_ip = "localhost";
 const int server_port = 8887;
+
 
 // MQTT服务器
 WiFiClient espClient;
@@ -154,6 +156,7 @@ void checkDistance() {
   }
 }
 
+
 // 回调函数，处理和mqtt相关的消息
 void callback(char* topic, byte* payload, unsigned int length) {
   String message;
@@ -181,6 +184,46 @@ void liftGate() {
 }
 
 
+// 新增函数，用于向后端发送post请求
+void sendPostRequest(const char* apiPath, const String& parking_id) {
+  http.begin(server_ip, server_port, apiPath);
+  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  String payload = "parking_id=" + parking_id;
+  int httpCode = http.POST(payload);
+  if (httpCode > 0) {
+    Serial.printf("POST request sent: %s, response code: %d\n", apiPath, httpCode);
+  } else {
+    Serial.printf("POST request failed: %s, error: %s\n", apiPath, http.errorToString(httpCode).c_str());
+  }
+  http.end();
+}
+
+void checkDistance() {
+  static unsigned long lastCheckTime = 0;
+  static unsigned long lastStateChangeTime = 0;
+  static bool previousState = false;
+
+  if (millis() - lastCheckTime >= 1000) {
+    lastCheckTime = millis();
+
+    bool currentState = (cm < 200); // 当前状态：距离小于2米
+
+    if (currentState == previousState && millis() - lastStateChangeTime >= 5000) {
+      // 距离状态持续5秒以上
+      if (currentState) {
+        sendPostRequest("/setNotUseful", "2c25f2ad-e82d-4a20-acc3-161054a417f5");
+      } else {
+        sendPostRequest("/setIsUseful", "2c25f2ad-e82d-4a20-acc3-161054a417f5");
+      }
+      lastStateChangeTime = millis(); // 更新状态改变时间
+    } else if (currentState != previousState) {
+      // 距离状态改变
+      previousState = currentState;
+      lastStateChangeTime = millis(); // 更新状态改变时间
+    }
+  }
+}
+
 void loop() { 
   server.handleClient();
   digitalWrite(TrigPin, LOW);       //用低高低电平发送脉冲给Trigpin引脚
@@ -194,6 +237,7 @@ void loop() {
   Serial.println();                   //回车
   delay(1000);
   checkDistance();
+
 
 // 新增MQTT客户端连接和消息处理
   if (!client.connected()) {
@@ -216,4 +260,5 @@ void loop() {
 // 发送距离数据到MQTT服务器
   String distanceStr = String(cm);
   client.publish(MQTT_TOPIC_DISTANCE, distanceStr.c_str());
+
 }

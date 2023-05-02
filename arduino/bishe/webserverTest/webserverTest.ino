@@ -1,56 +1,68 @@
-#include <ESP8266WiFiMulti.h>
-#include <ESP8266WebServer.h>
+#include <ESP8266WiFi.h>
+#include <WiFiClient.h>
 
-ESP8266WiFiMulti wifiMulti;
+const char* ssid = "abcd";   // 无线局域网的名称
+const char* password = "1234567889";   // 无线局域网的密码
 
-ESP8266WebServer server(80);
+const char* serverName = "localhost";  // 服务器的地址
+const int serverPort = 8887;   // 服务器的端口号
 
-const int ledPin = 2;
-bool ledState = false;
+WiFiClient client;    // WiFi客户端
 
-void handleRoot() {
-  String html = "<!DOCTYPE HTML>\n";
-  html += "<html><head><title>Hello Server</title></head><body>";
-  html += "<h1>Hello from ESP8266!</h1>";
-  html += "<p>Click the button to turn on/off the LED:</p>";
-  html += "<button onclick=\"toggleLED()\">Toggle LED</button>";
-  html += "<script>function toggleLED(){var xhr=new XMLHttpRequest();xhr.open(\"GET\",\"/toggle\");xhr.send();}</script>";
-  html += "</body></html>";
-  server.send(200, "text/html", html);
-}
-
-void handleToggle() {
-  ledState = !ledState;
-  digitalWrite(ledPin, ledState ? HIGH : LOW);
-  server.send(200, "text/plain", ledState ? "on" : "off");
-}
+const int TrigPin = 4;     //设置发射脚位，对应ESP8266 D2
+const int EchoPin = 5;    //设置接收脚位，对应ESP8266 D1
+float cm; 
 
 void setup() {
-  pinMode(ledPin, OUTPUT);
-  digitalWrite(ledPin, LOW);
-
   Serial.begin(115200);
-
-  wifiMulti.addAP("CMCC-pXm9-5G-FAST", "gf92pdxe");
-  wifiMulti.addAP("abcd", "1234567889");
-  wifiMulti.addAP("your-ssid-3", "your-password-3");
-
-  Serial.println("Connecting to WiFi...");
-  while (wifiMulti.run() != WL_CONNECTED) {
+  pinMode(TrigPin, OUTPUT);
+  pinMode(EchoPin, INPUT); 
+  WiFi.begin(ssid, password);   // 连接WiFi
+  while (WiFi.status() != WL_CONNECTED) {  // 等待连接成功
     delay(1000);
     Serial.println("Connecting to WiFi...");
   }
   Serial.println("Connected to WiFi");
-
-  server.on("/", handleRoot);
-  server.on("/toggle", handleToggle);
-
-  server.begin();
-  Serial.println("HTTP server started");
-  Serial.print("Connected to WiFi, IP address: ");
-  Serial.println(WiFi.localIP());
 }
 
 void loop() {
-  server.handleClient();
+  cm = getDistance();   // 获取距离
+  if (cm <= 70) {
+    sendSignal();    // 距离小于等于70cm，向服务器发送不可用信号
+  } else {
+    sendSignal();    // 距离大于70cm，向服务器发送可用信号
+  }
+  delay(5000);   // 每5秒发送一次请求
+}
+
+float getDistance() {
+  digitalWrite(TrigPin, LOW);       //用低高低电平发送脉冲给Trigpin引脚
+  delayMicroseconds(2);             //微秒级延时
+  digitalWrite(TrigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TrigPin, LOW);
+  cm = pulseIn(EchoPin, HIGH) / 58.0; //读取脉冲宽度，换算成厘米
+  Serial.print("Distance: ");
+  Serial.print(cm);                   //显示距离
+  Serial.println("cm");                   //显示单位
+  return cm;
+}
+
+void sendSignal() {
+  if (client.connect(serverName, serverPort)) {   // 连接服务器
+    Serial.println("Connected to server");
+    String data = "parking_id=214121";
+    // 发送POST请求
+    client.println("POST /setIsUseful HTTP/1.1");
+    client.println("Host: " + String(serverName));
+    client.println("Content-Type: application/x-www-form-urlencoded");
+    client.print("Content-Length: ");
+    client.println(data.length());
+    client.println();
+    client.print(data);
+    Serial.println("Signal sent");
+  } else {
+    Serial.println("Connection to server failed");
+  }
+  client.stop();   // 断开连接
 }
