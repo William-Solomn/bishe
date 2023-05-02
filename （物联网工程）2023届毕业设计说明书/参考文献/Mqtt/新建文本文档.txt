@@ -1,0 +1,23 @@
+1
+U. Hunkeler, H. L. Truong and A. Stanford-Clark, "MQTT-S — A publish/subscribe protocol for Wireless Sensor Networks," 2008 3rd International Conference on Communication Systems Software and Middleware and Workshops (COMSWARE '08), Bangalore, India, 2008, pp. 791-798, doi: 10.1109/COMSWA.2008.4554519.
+
+2
+Thangavel, D., Ma, X., Valera, A., Tan, H.-X., & Tan, C. K.-Y. (2014). Performance evaluation of MQTT and CoAP via a common middleware. 2014 IEEE Ninth International Conference on Intelligent Sensors, Sensor Networks and Information Processing (ISSNIP). doi:10.1109/issnip.2014.6827678 
+
+3
+Singh, M., Rajan, M. A., Shivraj, V. L., & Balamuralidhar, P. (2015). Secure MQTT for Internet of Things (IoT). 2015 Fifth International Conference on Communication Systems and Network Technologies. doi:10.1109/csnt.2015.16 
+
+4
+Naik, N. (2017). Choice of effective messaging protocols for IoT systems: MQTT, CoAP, AMQP and HTTP. 2017 IEEE International Systems Engineering Symposium (ISSE). doi:10.1109/syseng.2017.8088251
+
+5
+Yokotani, T., & Sasaki, Y. (2016). Comparison with HTTP and MQTT on required network resources for IoT. 2016 International Conference on Control, Electronics, Renewable Energy and Communications (ICCEREC). doi:10.1109/iccerec.2016.7814989 
+
+6
+
+
+7
+
+
+8
+
